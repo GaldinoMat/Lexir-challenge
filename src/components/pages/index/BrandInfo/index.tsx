@@ -1,29 +1,31 @@
 import Image from 'next/image'
 import React from 'react'
+import { IQueryProps } from 'src/pages/types/interfaces'
+import { ILocation, IReadMore } from './types/interfaces'
 
-function BrandInfo() {
+function BrandInfo({ brandName, brandText, imageURL, location }: IQueryProps) {
   return (
     <section className='flex flex-col space-y-9 px-10 border pb-[46px] pt-5 laptop:w-1/3'>
-      <ReadMoreSection />
-      <LocationInfo />
+      <ReadMoreSection brandName={brandName} brandText={brandText} imageURL={imageURL} />
+      <LocationInfo location={location} />
       <CategoriesInfo />
     </section>
   )
 }
 
-function ReadMoreSection() {
+function ReadMoreSection({ brandName, brandText, imageURL }: IReadMore) {  
   return (
     <section className='flex flex-col justify-center items-center'>
       <div className='mb-[66px] flex items-center justify-center'>
-        <Image src="/baldoria-logo.svg" width={215} height={76} alt="brand logo" />
+        <Image src={imageURL} width={215} height={76} alt="brand logo" />
       </div>
       <div>
         <div className='mb-[18px]'>
-          <h1 className='text-4xl font-bold'>Baldoria Vermouth</h1>
+          <h1 className='text-4xl font-bold'>{brandName}</h1>
         </div>
         <div className='mb-[22px]'>
           <p className='text-[#2D2D2D]'>
-            Badoria rosso is a red vermouth that balances fresh, herby bitter notes against. Kiss My Rhubarb takes its origins from an old handwritten recipe from co-creators Niels’ and Wouters’ rebellious grandparents.
+            {brandText}
           </p>
         </div>
         <div className='mx-auto w-fit'>
@@ -36,7 +38,7 @@ function ReadMoreSection() {
   )
 }
 
-function LocationInfo() {
+function LocationInfo({ location }: ILocation) {
   return (
     <section className='flex'>
       <div className='mr-[14px]'>
@@ -45,7 +47,7 @@ function LocationInfo() {
       <div>
         <p className='font-medium'>Location</p>
         <p className='font-medium text-xl text-[#595959]'>
-          London, United Kingdom
+          {location}
         </p>
       </div>
     </section>
