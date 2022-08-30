@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import Logo from '../Logo'
 
@@ -48,9 +49,27 @@ function FooterMenuLinks() {
         </div>
         <div>
           <ul className='font-medium text-base leading-8 text-white'>
-            <li>Lexir for Brands</li>
-            <li>Business Buyers</li>
-            <li>Sales Affiliates</li>
+            <li>
+              <Link href="/">
+                <a >
+                  Lexir for Brands
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a >
+                  Business Buyers
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a >
+                  Sales Affiliates
+                </a>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -60,9 +79,27 @@ function FooterMenuLinks() {
         </div>
         <div>
           <ul className='font-medium text-base leading-8 text-white'>
-            <li>Resources</li>
-            <li>Pricing</li>
-            <li>Get started</li>
+            <li>
+              <Link href="/">
+                <a >
+                  Resources
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a >
+                  Pricing
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a >
+                  Get started
+                </a>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -72,9 +109,27 @@ function FooterMenuLinks() {
         </div>
         <div>
           <ul className='font-medium text-base leading-8 text-white'>
-            <li>About</li>
-            <li>Contact</li>
-            <li>Legal</li>
+            <li>
+              <Link href="/">
+                <a >
+                  About
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a >
+                  Contact
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a >
+                  Legal
+                </a>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -84,10 +139,35 @@ function FooterMenuLinks() {
         </div>
         <div>
           <ul className='font-medium text-base leading-8 text-white'>
-            <li>Brands</li>
-            <li>Spirits</li>
-            <li>Wine</li>
-            <li>Blog</li>
+            <li>
+              <Link href="/">
+                <a >
+                  Brands
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a >
+                  Spirits
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/">
+                <a >
+                  Wine
+                </a>
+              </Link>
+            </li>
+            <li>
+
+              <Link href="/">
+                <a >
+                  Blog
+                </a>
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
@@ -100,12 +180,20 @@ function FooterLowerSection() {
     <section className='mt-3 w-full flex justify-between'>
       <div>
         <p className='text-white font-light'>
-          2022 Lexir Inc.
+          © 2022 Lexir Inc.
         </p>
       </div>
       <div>
-        <span className='mr-6 font-medium text-white'>Privacy</span>
-        <span className='font-medium text-white'>Terms of service</span>
+        <Link href="/">
+          <a>
+            <span className='mr-6 font-medium text-white'>Privacy</span>
+          </a>
+        </Link>
+        <Link href="/">
+          <a>
+            <span className='font-medium text-white'>Terms of service</span>
+          </a>
+        </Link>
       </div>
     </section>
   )

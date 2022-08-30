@@ -27,7 +27,7 @@ function ReadMoreSection() {
           </p>
         </div>
         <div className='mx-auto w-fit'>
-          <button className='px-[51px] py-[10px] font-medium text-xl text-[#1C8C64]'>
+          <button className='px-[51px] py-[10px] font-medium text-xl text-[#1C8C64] hover:bg-[#595959] hover:text-[#F9F9F9] duration-300'>
             Read More
           </button>
         </div>
@@ -61,11 +61,11 @@ function CategoriesInfo() {
       <div>
         <p className='font-medium mb-3'>Product Categories</p>
         <div className='flex space-x-2'>
-          <span className='px-6 bg-[#F9F9F9]'>
-            <p className='leading-[35px] font-medium text-[#595959]'>Gin</p>
+          <span className='px-6 bg-[#F9F9F9] text-[#595959] hover:bg-[#595959] hover:text-[#F9F9F9] duration-300 cursor-pointer'>
+            <p className='leading-[35px] font-medium'>Gin</p>
           </span>
-          <span className='px-6 bg-[#F9F9F9]'>
-            <p className='leading-[35px] font-medium text-[#595959]'>Vodka</p>
+          <span className='px-6 bg-[#F9F9F9] text-[#595959] hover:bg-[#595959] hover:text-[#F9F9F9] duration-300 cursor-pointer'>
+            <p className='leading-[35px] font-medium'>Vodka</p>
           </span>
         </div>
       </div>
