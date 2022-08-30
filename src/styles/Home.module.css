@@ -7,6 +7,26 @@
   justify-content: center;
   align-items: center;
 }
+
+@media screen and (min-width: 1024px) {
+  .main {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .main {
+    padding: 0 8rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .main {
+    padding: 0 12rem;
+  }
+}
+
 .title a {
   color: #0070f3;
   text-decoration: none;
@@ -43,13 +63,16 @@
 }
 
 @media (prefers-color-scheme: dark) {
+
   .card,
   .footer {
     border-color: #222;
   }
+
   .code {
     background: #111;
   }
+
   .logo img {
     filter: invert(1);
   }

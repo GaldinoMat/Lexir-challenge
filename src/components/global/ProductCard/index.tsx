@@ -3,7 +3,7 @@ import React from 'react'
 
 function ProductCard() {
   return (
-    <div className='flex flex-col w-[175px] shadow-md'>
+    <div className='flex flex-col w-[175px] shadow-xl'>
       <div>
         <Image src="/mr-gaston-brandy-bottle.svg" width={175} height={233} alt="product image2" />
       </div>

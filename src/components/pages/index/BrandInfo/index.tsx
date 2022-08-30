@@ -3,7 +3,7 @@ import React from 'react'
 
 function BrandInfo() {
   return (
-    <section className='flex flex-col space-y-9 px-10 border pb-[46px] pt-5'>
+    <section className='flex flex-col space-y-9 px-10 border pb-[46px] pt-5 laptop:w-1/3'>
       <ReadMoreSection />
       <LocationInfo />
       <CategoriesInfo />

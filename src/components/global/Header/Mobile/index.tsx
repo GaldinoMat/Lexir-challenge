@@ -1,5 +1,8 @@
-import Image from 'next/image'
 import React, { useState } from 'react'
+import Logo from '../../Logo'
+import Menulinks from '../components/Menulinks'
+import Minicart from '../components/Minicart'
+import UserProfile from '../components/UserProfile'
 
 interface IOpenNav {
   isNavOpen?: boolean
@@ -10,10 +13,8 @@ function HeaderMobile() {
   const [isNavOpen, setIsNavOpen] = useState(false)
 
   return (
-    <section className="w-full flex md:hidden items-center justify-between text-[#2D2D2D] font-medium">
-      <div>
-        <Image src="/logo.svg" width={103} height={24} alt="Lexir logo" />
-      </div>
+    <section className="w-full flex laptop:hidden items-center justify-between text-[#2D2D2D] font-medium">
+      <Logo source="/logo.svg" />
       <BackgroundCover isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       <OpenNavButton isNavOpen={isNavOpen} setIsNavOpen={setIsNavOpen} />
       <MobileNavbar isNavOpen={isNavOpen} />
@@ -50,28 +51,11 @@ function MobileNavbar({ isNavOpen = false }: IOpenNav) {
     <nav className={`fixed z-[2] ${isNavOpen ? 'left-0' : '-left-full'
       } top-0 w-2/3 pt-[50px] pr-5 pb-[30px] pl-[30px] bg-white h-screen transition-all duration-500 flex flex-col space-y-2`}>
       <div className='flex flex-col space-y-1'>
-        <div className='flex'>
-          <div className='mr-2'>
-            <Image src="/carbon_user-avatar.svg" height={24} width={24} alt="user avatar" />
-          </div>
-          <div>
-            Hello, Leandro
-          </div>
-        </div>
-        <div className='flex'>
-          <div className='mr-2'>
-            <Image src="/basket-add.svg" height={24} width={24} alt="basket add to cart" />
-          </div>
-          <div>
-            Cart
-          </div>
-        </div>
+        <UserProfile />
+        <Minicart />
       </div>
       <hr className='border-black rounded' />
-      <ul className='flex flex-col space-y-1'>
-        <li>Products</li>
-        <li>Brands</li>
-      </ul>
+      <Menulinks />
     </nav>
   )
 }
