@@ -1,4 +1,4 @@
-export interface IQueryProps {
+export default interface IQueryProps {
   imageURL: string
   brandName: string
   brandText: string

@@ -4,7 +4,7 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { gql } from '@apollo/client';
 import client from "apolloClient";
-import { IQueryProps } from "./types/interfaces";
+import IQueryProps from "./types/interfaces";
 
 export default function Home({ brandName, brandText, imageURL, location }: IQueryProps) {
   return (
