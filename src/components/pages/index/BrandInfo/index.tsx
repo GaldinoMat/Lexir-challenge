@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import { ClipLoader } from 'react-spinners'
 import IQueryProps from 'src/types/interfaces'
 import { ILocation, IReadMore } from './types/interfaces'
 
@@ -56,16 +57,29 @@ function LocationInfo({ location }: ILocation) {
 
 function CategoriesInfo() {
   const [categories, setCategories] = useState<string[]>([])
+  const [loading, setLoading] = useState(true)
 
   const fetchData = async () => {
     return await fetch('/api/categories', {
       method: 'POST',
-    }).then(resp => resp.json()).then(json => JSON.parse(json))
+    }).then(resp => resp.json()).then(json => {
+      setLoading(false)
+      return JSON.parse(json)
+    })
   }
 
   useEffect(() => {
     fetchData().then((data) => setCategories(data))
   }, [])
+
+  if (loading) return (
+    <div className='w-full h-full flex items-center justify-center'>
+      <ClipLoader
+        loading
+        size={50}
+      />
+    </div>
+  )
 
   return (
     <section className='flex'>
