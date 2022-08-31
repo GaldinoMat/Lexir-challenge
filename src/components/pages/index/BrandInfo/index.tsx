@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { IQueryProps } from 'src/pages/types/interfaces'
 import { ILocation, IReadMore } from './types/interfaces'
 
@@ -13,7 +13,7 @@ function BrandInfo({ brandName, brandText, imageURL, location }: IQueryProps) {
   )
 }
 
-function ReadMoreSection({ brandName, brandText, imageURL }: IReadMore) {  
+function ReadMoreSection({ brandName, brandText, imageURL }: IReadMore) {
   return (
     <section className='flex flex-col justify-center items-center'>
       <div className='mb-[66px] flex items-center justify-center'>
@@ -55,6 +55,18 @@ function LocationInfo({ location }: ILocation) {
 }
 
 function CategoriesInfo() {
+  const [categories, setCategories] = useState<string[]>([])
+
+  const fetchData = async () => {
+    return await fetch('/api/categories', {
+      method: 'POST',
+    }).then(resp => resp.json()).then(json => JSON.parse(json))
+  }
+
+  useEffect(() => {
+    fetchData().then((data) => setCategories(data))
+  }, [])
+
   return (
     <section className='flex'>
       <div className='mr-[14px]'>
@@ -62,13 +74,12 @@ function CategoriesInfo() {
       </div>
       <div>
         <p className='font-medium mb-3'>Product Categories</p>
-        <div className='flex space-x-2'>
-          <span className='px-6 bg-[#F9F9F9] text-[#595959] hover:bg-[#595959] hover:text-[#F9F9F9] duration-300 cursor-pointer'>
-            <p className='leading-[35px] font-medium'>Gin</p>
-          </span>
-          <span className='px-6 bg-[#F9F9F9] text-[#595959] hover:bg-[#595959] hover:text-[#F9F9F9] duration-300 cursor-pointer'>
-            <p className='leading-[35px] font-medium'>Vodka</p>
-          </span>
+        <div className='flex flex-col laptop:flex-row gap-2 flex-wrap'>
+          {categories.map((category: any) => (
+            <div key={category.index} className='px-6 laptop:min-w-[70px] bg-[#F9F9F9] text-[#595959] hover:bg-[#595959] hover:text-[#F9F9F9] duration-300 cursor-pointer flex items-center justify-center'>
+              <p className='leading-[35px] font-medium'>{category.category}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

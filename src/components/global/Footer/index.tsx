@@ -24,16 +24,32 @@ function FooterSocialLinks() {
     <section className='col-start-2 col-span-1 laptop:order-3'>
       <ul className='flex justify-end space-x-2'>
         <li>
-          <Image src="/medium.svg" width={24} height={24} alt="medium logo" />
+          <Link href="/">
+            <a>
+              <Image src="/medium.svg" width={24} height={24} alt="medium logo" />
+            </a>
+          </Link>
         </li>
         <li>
-          <Image src="/icons8-facebook 2.svg" width={24} height={24} alt="facebook logo" />
+          <Link href="/">
+            <a>
+              <Image src="/icons8-facebook 2.svg" width={24} height={24} alt="facebook logo" />
+            </a>
+          </Link>
         </li>
         <li>
-          <Image src="/icons8-instagram 2.svg" width={24} height={24} alt="instagram logo" />
+          <Link href="/">
+            <a>
+              <Image src="/icons8-instagram 2.svg" width={24} height={24} alt="instagram logo" />
+            </a>
+          </Link>
         </li>
         <li>
-          <Image src="/linkedin.svg" width={24} height={24} alt="linkedin logo" />
+          <Link href="/">
+            <a>
+              <Image src="/linkedin.svg" width={24} height={24} alt="linkedin logo" />
+            </a>
+          </Link>
         </li>
       </ul>
     </section>
@@ -183,10 +199,10 @@ function FooterLowerSection() {
           © 2022 Lexir Inc.
         </p>
       </div>
-      <div>
+      <div className='flex gap-x-4'>
         <Link href="/">
           <a>
-            <span className='mr-6 font-medium text-white'>Privacy</span>
+            <span className='font-medium text-white'>Privacy</span>
           </a>
         </Link>
         <Link href="/">
