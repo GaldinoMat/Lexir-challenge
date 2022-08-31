@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
-import { IQueryProps } from 'src/pages/types/interfaces'
+import IQueryProps from 'src/pages/types/interfaces'
 import { ILocation, IReadMore } from './types/interfaces'
 
 function BrandInfo({ brandName, brandText, imageURL, location }: IQueryProps) {
